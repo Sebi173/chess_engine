@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+{% load static %} 
+
+<head>
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+</head>
+
+<body>
+    <div class="mini-board cg-wrap is2d orientation-white"><cg-container style="width: 800px; height: 800px;">
+            <cg-board>
+                <piece class="black-rook" style="transform: translate(0px);"></piece>
+                <piece class="black-knight" style="transform: translate(41px);"></piece>
+                <piece class="black-rook" style="transform: translate(164px);"></piece>
+                <piece class="black-king" style="transform: translate(205px);"></piece>
+                <piece class="black-bishop" style="transform: translate(287px);"></piece>
+                <piece class="black-pawn" style="transform: translate(0px, 41px);"></piece>
+                <piece class="black-bishop" style="transform: translate(41px, 41px);"></piece>
+                <piece class="black-pawn" style="transform: translate(82px, 41px);"></piece>
+                <piece class="black-pawn" style="transform: translate(205px, 41px);"></piece>
+                <piece class="white-queen" style="transform: translate(287px, 41px);"></piece>
+                <piece class="black-pawn" style="transform: translate(41px, 82px);"></piece>
+                <piece class="black-pawn" style="transform: translate(123px, 82px);"></piece>
+                <piece class="black-queen" style="transform: translate(205px, 82px);"></piece>
+                <piece class="white-pawn" style="transform: translate(287px, 82px);"></piece>
+                <piece class="black-pawn" style="transform: translate(246px, 123px);"></piece>
+                <piece class="white-pawn" style="transform: translate(82px, 164px);"></piece>
+                <piece class="white-pawn" style="transform: translate(123px, 164px);"></piece>
+                <piece class="white-bishop" style="transform: translate(205px, 164px);"></piece>
+                <piece class="white-pawn" style="transform: translate(82px, 205px);"></piece>
+                <piece class="white-pawn" style="transform: translate(164px, 205px);"></piece>
+                <piece class="white-pawn" style="transform: translate(205px, 205px);"></piece>
+                <piece class="white-pawn" style="transform: translate(0px, 246px);"></piece>
+                <piece class="white-bishop" style="transform: translate(82px, 246px);"></piece>
+                <piece class="white-pawn" style="transform: translate(205px, 246px);"></piece>
+                <piece class="white-rook" style="transform: translate(0px, 287px);"></piece>
+                <piece class="white-king" style="transform: translate(164px, 287px);"></piece>
+                <piece class="white-rook" style="transform: translate(287px, 287px);"></piece>
+            </cg-board>
+        </cg-container>
+    </div>
+</body>
+
+</html>

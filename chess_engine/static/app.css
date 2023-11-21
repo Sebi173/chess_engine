@@ -1,0 +1,57 @@
+cg-board {
+    background-image: url("/images/chess_board.svg");
+    top: 0;
+    left: 0;
+    user-select: none;
+    line-height: 0;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+piece {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12.5%;
+    height: 12.5%;
+    background-size: cover;
+    z-index: 2;
+    will-change: transform;
+    pointer-events: none;
+}
+
+cg-container {
+    position: relative;
+    display: block;
+    top: 0;
+    right: 0;
+}
+
+.mini-board,
+.mini-game .cg-wrap,
+.main-board {
+    position: relative;
+    align-items: center;
+    display: block;
+    height: 0;
+    padding-bottom: 100%;
+    width: 100%;
+}
+
+.black-king {
+    background-image: url("/images/black_king.svg");
+}
+
+.black-pawn {
+    background-image: url("/images/black_pawn.svg");
+}
+
+.black-knight {
+    background-image: url("/images/black_knight.svg");
+}
+
+.black-king {
+    background-image: url("/images/black_king.svg");
+}
