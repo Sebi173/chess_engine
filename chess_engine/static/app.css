@@ -19,7 +19,6 @@ piece {
     background-size: cover;
     z-index: 2;
     will-change: transform;
-    pointer-events: none;
 }
 
 cg-container {

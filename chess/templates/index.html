@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 
 {% load static %} 
+{% csrf_token %}
 
 <head>
     <link rel="stylesheet" href="{% static 'app.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -17,8 +20,23 @@
         <div class = "options">
             <h1>
                 Reload Game
-            </h1> 
+            </h1>
         </div>
+        <div class="clickable" id="myClickableDiv">Click me!</div>
+
+        <script>
+            // Get the element by its ID
+            var clickableDiv = document.getElementById('myClickableDiv');
+
+            // Add a mousedown event handler
+            clickableDiv.addEventListener('mousedown', function (event) {
+                // This function will be called when the mouse button is pressed over the element
+                alert('Mouse button pressed over the clickable div!');
+                
+                // You can access the event object for more details
+                console.log('Mouse button:', event.button);
+            });
+        </script>
     </div>
 </body>
 
