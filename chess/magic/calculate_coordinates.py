@@ -1,4 +1,12 @@
-def calculate_coordinates_for_one_piece(chessPieces):
+def calculate_coordinates_for_one_piece(chessPieces: bin):
+    """
+    Input: ChessPieces [bin]
+    Is a binary representations of exactly one category of chess pieces
+    0b100010000
+    Output: listCoordinates [list]
+    Contains (x,y,id) tuple of every chess piece of said category, where x,y gives the positioning on the board for the frontend
+    """
+
     binaryRepresentation = str(bin(chessPieces))
     reversedBinaryRepresentation = binaryRepresentation[::-1]
 
@@ -9,8 +17,7 @@ def calculate_coordinates_for_one_piece(chessPieces):
     for coordinate in reversedBinaryRepresentation:
         if coordinate == "1":
             #transform: translate(0px, 205px);
-            #listCoordinates.append(f"transform: translate({100*x}px, {100*y}px);")
-            listCoordinates.append((100*x, 100*y))
+            listCoordinates.append((100*x, 100*y, str(x)+str(y)))
 
         x += 1
         if x == 8:

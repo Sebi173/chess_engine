@@ -13,7 +13,5 @@ def load_starting_position():
     whiteQueen = 2**59
     whiteRooks = 2**56 + 2**63
 
-    listPosition = [blackBishops, blackKing, blackKnights, blackPawns, blackQueen, blackRooks, 
+    return [blackBishops, blackKing, blackKnights, blackPawns, blackQueen, blackRooks, 
                     whiteBishops, whiteKing, whiteKnights, whitePawns, whiteQueen, whiteRooks]
-
-    return listPosition

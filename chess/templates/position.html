@@ -1,89 +1,55 @@
 <!DOCTYPE html>
 
-{% for x,y in blackBishops %}
-    <piece class="black-bishop" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% load static %}
+
+{% for x,y,id in blackBishops %}
+    <piece class="black-bishop" id=BBi{{id}} style="transform: translate({{ x }}px, {{ y }}px);"></piece>
 {% endfor %}
 
-{% for x,y in blackKing %}
-    <piece class="black-king" id="test" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in blackKing %}
+    <piece class="black-king" id=BKi{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in blackKnights %}
-    <piece class="black-knight" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in blackKnights %}
+    <piece class="black-knight" id=BKn{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in blackPawns %}
-    <piece class="black-pawn" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in blackPawns %}
+    <piece class="black-pawn" id=BPa{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in blackQueen %}
-    <piece class="black-queen" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in blackQueen %}
+    <piece class="black-queen" id=BQu{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in blackRooks %}
-    <piece class="black-rook" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in blackRooks %}
+    <piece class="black-rook" id=BRo{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in whiteBishops %}
-    <piece class="white-bishop" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in whiteBishops %}
+    <piece class="white-bishop" id=WBi{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in whiteKing %}
-    <piece class="white-king" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in whiteKing %}
+    <piece class="white-king" id=WKi{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in whiteKnights %}
-    <piece class="white-knight" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in whiteKnights %}
+    <piece class="white-knight" id=WKn{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in whitePawns %}
-    <piece class="white-pawn" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in whitePawns %}
+    <piece class="white-pawn" id=WPa{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in whiteQueen %}
-    <piece class="white-queen" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in whiteQueen %}
+    <piece class="white-queen" id=WQu{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-{% for x,y in whiteRooks %}
-    <piece class="white-rook" style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% for x,y,id in whiteRooks %}
+    <piece class="white-rook" id=WRo{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
-<script>
-    // Get all div elements by tag name
-    var divElements = document.getElementsByTagName('piece');
-
-    // Loop through the HTMLCollection and perform actions
-    for (var i = 0; i < divElements.length; i++) {
-        var currentDiv = divElements[i];
-
-        // Event listener for the custom HTML tag
-        currentDiv.addEventListener('mousedown', function () {
-            // Get style and class from the element
-            var style = this.style.cssText;
-            var cssClass = this.className;
-
-            // Send an AJAX request to the Django backend
-            $.ajax({
-                type: 'POST',
-                headers: {
-                    'X-CSRFToken': getCookie('csrftoken')
-                },
-                url: '/',  // Adjust the URL to match your Django URL pattern
-                data: { 'style': style, 'class': cssClass },
-                dataType: 'json',
-                success: function (data) {
-                    console.log('Response from server:', data);
-                    // Handle the response from the server as needed
-                    alert(data.message);
-                }
-            });
-        });
-    };
-    function getCookie(name) {
-        var value = "; " + document.cookie;
-        var parts = value.split("; " + name + "=");
-        if (parts.length === 2) return parts.pop().split(";").shift();
-    }
-</script>
+<script src="{% static 'js/click_handler.js' %}"></script>
 
 </html>
