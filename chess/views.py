@@ -7,13 +7,18 @@ from .magic.calculate_legal_moves import calculate_legal_moves
 
 def index(request):
     if request.method == "POST":
+        id = request.POST.get("id", "")
+        if id == "reload":
+            listPosition = load_starting_position()
+            dicCoordinates = calculate_coordinates_for_all_pieces(listPosition)
+            return render(request, "index.html", dicCoordinates)
+        
         listPosition = load_starting_position()
         dicCoordinates = calculate_coordinates_for_all_pieces(listPosition)
-        chessPiece = request.POST.get("id", "")
-        dicCoordinates = calculate_legal_moves(chessPiece, dicCoordinates)
+        dicCoordinates = calculate_legal_moves(id, dicCoordinates)
         return render(request, "index.html", dicCoordinates)
     
-    listPosition = load_starting_position()
-    dicCoordinates = calculate_coordinates_for_all_pieces(listPosition)
+    elif request.method == "GET":
+        dicCoordinates = {}
 
     return render(request, "index.html", dicCoordinates)

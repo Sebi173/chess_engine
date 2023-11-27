@@ -18,25 +18,12 @@
             </cg-container>
         </div>
         <div class = "options">
-            <h1>
+            <button id = "reload">
                 Reload Game
-            </h1>
+            </button>
         </div>
-        <div class="clickable" id="myClickableDiv">Click me!</div>
 
-        <script>
-            // Get the element by its ID
-            var clickableDiv = document.getElementById('myClickableDiv');
-
-            // Add a mousedown event handler
-            clickableDiv.addEventListener('mousedown', function (event) {
-                // This function will be called when the mouse button is pressed over the element
-                alert('Mouse button pressed over the clickable div!');
-                
-                // You can access the event object for more details
-                console.log('Mouse button:', event.button);
-            });
-        </script>
+        <script src="{% static 'js/reload_game.js' %}"></script>
     </div>
 </body>
 

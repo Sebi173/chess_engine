@@ -3,7 +3,7 @@
 {% load static %}
 
 {% for x,y,id in blackBishops %}
-    <piece class="black-bishop" id=BBi{{id}} style="transform: translate({{ x }}px, {{ y }}px);"></piece>
+    <piece class="black-bishop" id=BBi{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
 {% endfor %}
 
 {% for x,y,id in blackKing %}
@@ -48,6 +48,10 @@
 
 {% for x,y,id in whiteRooks %}
     <piece class="white-rook" id=WRo{{id}} style="transform: translate({{x}}px, {{y}}px);"></piece>
+{% endfor %}
+
+{% for x,y,id in legalMoves %}
+    <div class="legal-move" id=LMo{{id}} style="transform: translate({{x}}px, {{y}}px);"></move>
 {% endfor %}
 
 <script src="{% static 'js/click_handler.js' %}"></script>
